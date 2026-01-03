@@ -1,0 +1,24 @@
+<div class="new-chat-wrapper">
+    <h2>New chat</h2>
+
+    <form [formGroup]="newContactForm" (submit)="create()" class="new-chat-form">
+
+        <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" type="text" formControlName="name" placeholder="Name of the contact">
+        </div>
+
+        <div class="form-field">
+            <label for="initial">Initial message (optional)</label>
+            <input id="initial" type="text" formControlName="initial" placeholder="Hello 👋">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="primary" [disabled]="newContactForm.invalid">
+                Create
+            </button>
+            <button type="button" class="secondary" (click)="cancel()">Cancel</button>
+        </div>
+
+    </form>
+</div>

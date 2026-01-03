@@ -1,0 +1,48 @@
+const automatedReplies = [
+  "OK",
+  "I understand",
+  "Sounds good",
+  "Great!",
+  "Perfect",
+  "Alright",
+  "Sure",
+  "Got it",
+  "Exactly",
+  "Thanks for sharing",
+  "Good",
+  "I see",
+  "Absolutely",
+  "Right",
+  "Makes sense",
+  "Understood",
+  "Gotcha",
+  "Fine",
+  "Nice",
+  "Cool",
+  "That's interesting",
+  "Of course",
+  "All good",
+  "No problem",
+  "I agree",
+  "Very well",
+  "Thanks",
+  "I got it",
+  "Exactly right",
+  "Perfect, thanks",
+  "Understood, thanks",
+  "OK, got it",
+  "Yes",
+  "Correct",
+  "Exactly",
+  "Right on",
+  "Noted",
+  "Sounds great",
+  "Perfectly",
+  "I see, thanks",
+  "Understood perfectly"
+];
+
+
+export function getRandomMessage(){
+  return automatedReplies[Math.floor(Math.random() * automatedReplies.length)]
+}

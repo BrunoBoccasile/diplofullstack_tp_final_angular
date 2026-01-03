@@ -1,59 +1,98 @@
-# TpFinalAngular
+# Clon de Aplicación de Chat en Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+## Descripción
+Este proyecto es un clon funcional de una aplicación de chat, desarrollado con Angular 17 y CSS nativo, como Trabajo Final Integrador del curso.
 
-## Development server
+El objetivo principal fue aplicar los conceptos centrales de Angular moderno, incluyendo Standalone Components, Routing con provideRouter, Control Flow Blocks (@if, @for), Reactive Forms y Signals, además de buenas prácticas de organización y diseño responsive.
 
-To start a local development server, run:
+La aplicación simula una interfaz de chat con lista de contactos, historial independiente por conversación y envío/recepción automática de mensajes.
 
-```bash
-ng serve
-```
+## Cómo usar
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Opción A:
+Ingresar a https://diplofullstack-tp-final-angular.vercel.app/
 
-## Code scaffolding
+### Opción B:
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/BrunoBoccasile/diplofullstack_tp_final_angular.git
+2. Instalar dependencias:
+   ```bash
+   npm install
+3.  Ejecutar el proyecto:
+      ```bash 
+      ng serve -o
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+## Funcionalidad
 
-## Building
+### Panel lateral izquierdo (lista de chats).
 
-To build the project run:
+- Muestra todos los chats disponibles.
+- Permite agregar nuevos contactos mediante un formulario validado (no acepta texto vacío).
+- En dispositivos móviles, el panel se abre mediante un botón tipo menú hamburguesa
+- Cada contacto incluye:
+   - Foto de perfil
+   - Nombre
+   - Estado (online, offline)
+- Uso de Control Flow Blocks de Angular 17:
+   - @for para iterar la lista de chats.
+   - @if para manejar estados vacíos o condicionales.
+- En dispositivos móviles, el panel lateral se oculta y puede desplegarse mediante un menú hamburguesa.
 
-```bash
-ng build
-```
+### Panel principal derecho (ventana de chat)
+- Muestra el historial de mensajes del chat seleccionado.
+- Cada chat mantiene su historial de mensajes de forma independiente.
+- Los mensajes se muestran en burbujas diferenciadas:
+   - Usuario → alineados a la derecha.
+   - App → alineados a la izquierda.
+- Al enviar un mensaje:
+   - Se muestra inmediatamente en pantalla.
+   - La aplicación responde automáticamente con un mensaje simulado luego de un retardo.
+- Input de envío implementado con Reactive Forms (FormControl), con validación de texto vacío.
+- Scroll automático al último mensaje.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Routing
 
-## Running unit tests
+- La aplicación utiliza Routing moderno con provideRouter y Standalone Components:
+   - /chats → lista de chats.
+   - /chats/:id → conversación con un contacto específico.
+   - /nuevo → formulario para crear un nuevo chat.
+- Manejo de rutas inválidas con redirección.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Conceptos aplicados
 
-```bash
-ng test
-```
+- Standalone Components.
+- Routing.
+- Control Flow Blocks (@if, @for).
+- Reactive Forms (FormGroup, FormControl, validaciones).
+- Signals para el manejo del estado global de chats y mensajes.
+- Servicios (ChatService) para encapsular la lógica de negocio.
+- Interfaces para definir los modelos de datos (Chat, Message).
+- Renderizado condicional.
+- Manejo de listas dinámicas con track.
+- Organización modular del código.
 
-## Running end-to-end tests
+## Estilos y diseño
+- Estilos implementados completamente con CSS nativo.
+- Uso de Flexbox para:
+   - Layout general
+   - Lista de chats
+   - Alineación de mensajes
+- Diseño responsive mediante media queries.
+- Burbuja diferenciada para mensajes enviados y recibidos.
+- Estética clara (light theme), inspirada en aplicaciones de chat modernas.
+- Componentes visuales reutilizables y consistentes.
 
-For end-to-end (e2e) testing, run:
+## Capturas de pantalla
 
-```bash
-ng e2e
-```
+<img src="./public/captura1.png" alt="captura1">
+<img src="./public/captura2.png" alt="captura2">
+<img src="./public/captura3.png" alt="captura3">
+<img src="./public/captura4.png" alt="captura4">
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Créditos
+- Autor: Bruno Boccasile
+- Curso: Angular

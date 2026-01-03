@@ -1,0 +1,38 @@
+<div class="chatlist-wrapper">
+
+    <header>
+        <h2>Chat list</h2>
+    </header>
+
+    <div class="contacts-scroll">
+        @for (chat of chatService.chats(); track chat.id)
+        {
+        <div (click)="open(chat.id)" class="contact-card">
+
+            <div class="profile-image">
+                <img [src]="chat.profile_picture" [alt]="chat.name" />
+            </div>
+
+            <div class="contact-info">
+                <h3>
+                    <span [appStatusDot]="chat.online"></span> {{chat.name}}
+                </h3>
+                <span>{{chat.lastMessage}}</span>
+            </div>
+
+        </div>
+        }
+
+        @if (chatService.chats().length === 0) 
+        {
+            <div class="no-chats">
+                There are no chats
+            </div>
+        }
+    </div>
+
+    <div class="new-contact-container">
+        <button (click)="nuevo()">New chat</button>
+    </div>
+
+</div>

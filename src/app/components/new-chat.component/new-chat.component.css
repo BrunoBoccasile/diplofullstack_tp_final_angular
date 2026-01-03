@@ -1,0 +1,98 @@
+.new-chat-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #F5F5F5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.new-chat-wrapper h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.new-chat-form {
+    background: #FFF;
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-field label {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.form-field input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #CCC;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.form-field input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button.primary {
+    background: #4CAF50;
+    color: #FFF;
+    font-weight: 500;
+}
+
+button.primary:hover {
+    background: #45A049;
+}
+
+button.secondary {
+    background: #E0E0E0;
+    color: #333;
+}
+
+button.secondary:hover {
+    background: #D5D5D5;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .new-chat-form{
+        width: 80%;;
+    }
+}

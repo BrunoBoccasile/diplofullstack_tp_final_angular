@@ -1,0 +1,46 @@
+@if (chatSignal())
+{
+<div class="chat-window">
+
+    <header class="chat-header">
+        <div class="profile-image">
+            <img [src]="chatSignal()?.profile_picture" [alt]="chatSignal()?.name" />
+        </div>
+        <h2>{{chatSignal()?.name}}</h2>
+    </header>
+
+    <div class="messages-container" #messagesContainer>
+        @for (message of chatSignal()?.messages; track message.id)
+        {
+        <div [ngClass]="{'message': true, 'sent': message.fromMe, 'received': !message.fromMe}">
+            <p>{{message.text}}</p>
+            <span class="msg-date">{{formatDate(message.date)}}</span>
+        </div>
+
+        }
+
+        @if ((chatSignal()?.messages ?? []).length === 0)
+        {
+        <div class="no-messages">
+            No hay mensajes
+        </div>
+        }
+    </div>
+
+    <form [formGroup]="messageForm" class="chat-input" (submit)="send()">
+        <input name="text" placeholder="Write a message" formControlName="message" />
+        <button type="submit">Enviar</button>
+    </form>
+
+</div>
+}
+@else
+{
+<div class="chat-not-found">
+    <div class="chat-not-found-card">
+        <div class="icon">💬</div>
+        <h2>Chat not found</h2>
+        <p>The chat that you're looking for doesn't exist.</p>
+    </div>
+</div>
+}

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+
+body{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
