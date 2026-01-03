@@ -10,7 +10,7 @@ La aplicación simula una interfaz de chat con lista de contactos, historial ind
 ## Cómo usar
 
 ### Opción A:
-Ingresar a https://diplofullstack-tp-final-angular.vercel.app/
+Ingresar a https://diplofullstack-tp-final-angular-pdm.vercel.app/
 
 ### Opción B:
 1. Clonar el repositorio:
