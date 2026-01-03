@@ -5,7 +5,7 @@ import { NewChatComponent } from './components/new-chat.component/new-chat.compo
 
 export const routes: Routes = [
     {
-        path: '', redirectTo: 'chats', pathMatch: 'full'
+        path: '', redirectTo: 'chats/1', pathMatch: 'full'
     },
     {
         path: 'chats', component: ChatsComponent
